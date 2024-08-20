@@ -1,35 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Blueprint from "./components/Blueprint/Blueprint";
+import Calculator from "./components/Calculator/Calculator";
+import { CalculatorProvider } from "./context/CalculatorContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <CalculatorProvider>
+      <div className="grid grid-cols-1 sm:grid-cols-[1fr,_2fr] gap-8 w-screen h-screen place-items-center">
+        <Calculator className="max-w-screen-sm sm:justify-self-end sm:place-self-start" />
+        <Blueprint className="overflow-y-scroll min-w-96 sm:justify-self-start max-w-screen-md" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </CalculatorProvider>
+  );
 }
 
-export default App
+export default App;
