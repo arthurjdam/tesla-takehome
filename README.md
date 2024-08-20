@@ -10,6 +10,11 @@ Start the development server:
 npm run dev
 ```
 
+View storybook
+```bash
+npm run storybook
+```
+
 ## Notes
 For packing the rectangles, I went with Guillotine Pack. It is a simple
 algorithm that tries to pack the rectangles in a way that it minimizes the
